@@ -1,0 +1,11 @@
+worker_processes 4;
+event {worker_connections 1024;}
+http{
+  server{
+  listen 80;
+  location / {
+   proxy_pass http://ghost-app:2368;
+   }
+  }
+
+}
